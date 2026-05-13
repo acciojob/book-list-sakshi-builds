@@ -1,7 +1,7 @@
 //your JS code here. If required.
 let sub=document.getElementById("submit");
 sub.addEventListener("click",addBook);
-fucntion addBook(){
+function addBook(){
 	let title=document.getElementById("title").value ;
 	let author=document.getElementById("author").value ;
 	let isbn=document.getElementById("isbn").value ;
@@ -9,17 +9,21 @@ fucntion addBook(){
 	let body=document.getElementById("book-list");
 	let row=document.createElement("tr");
 	row.innerHTML=
+		`
 		<td>${title}</td>
         <td>${author}</td>
 		<td>${isbn}</td> 
-		<td class="delete">Clear</td> ;
-	booklist.appendchild(row);
+		<td
+		<button class="delete">Clear</button>
+		</td>
+		` ;
+	body.appendChild(row);
 
-	document.getElementById("title")="";
-	document.getElementById("author")="";
-	document.getElementById("isbn")="";
+	document.getElementById("title").value="";
+	document.getElementById("author").value="";
+	document.getElementById("isbn").value="";
 
-	let deleteBtn=document.querySelector(".delete");
+	let deleteBtn=row.querySelector(".delete");
 	deleteBtn.addEventListener("click",function(){
 		row.remove();
 	});
