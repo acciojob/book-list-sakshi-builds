@@ -13,7 +13,7 @@ function addBook(){
 		<td>${title}</td>
         <td>${author}</td>
 		<td>${isbn}</td> 
-		<td
+		<td>
 		<button class="delete">Clear</button>
 		</td>
 		` ;
